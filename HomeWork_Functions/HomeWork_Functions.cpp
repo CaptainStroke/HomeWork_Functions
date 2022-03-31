@@ -1,9 +1,49 @@
-﻿//1.	Написать функцию SetCursor, которая устанавливает координаты и цвет текста.Функция принимает три аргумента : координата по X, координата по Y, номер цвета.
+﻿//1.	Написать функцию SetCursor, которая устанавливает координаты и цвет текста.
+//Функция принимает три аргумента : координата по X, координата по Y, номер цвета.
+
+
+#include <iostream>
+#include <Windows.h>
+#include <conio.h>
+using namespace std;
+void SetCursor(int X, int Y, int C)
+{ 
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(hConsole, C);
+	cout << "X = " << X << "\n";
+	cout << "Y = " << Y << "\n";
+}
+int main()
+{
+	SetCursor(5, 8, 5);
+}
+
 
 //2.	Написать функцию Line, которую можно будет вызвать так :
 //Line(20, '@', 12, true);
 //и при этом горизонтальная нарисуется линия, состоящая из 20 «собачек» красного цвета.
 //Если передать в последнем параметре false – линия станет вертикальной.
+
+//
+//#include <iostream>
+//#include <Windows.h>
+//using namespace std;
+//
+////void func(int a, string b, int c);
+////int main();
+//
+//void func(int a, string b, int c)
+//{
+//	cout << a << b << c << "\n";
+//}
+//
+//int main()
+//{
+//	func(5, "@", 8);
+//	cout << "Hello";
+//}
+
+
 
 //3.	Написать функцию Rectangle, которая выводит на экран прямоугольник.
 //Функция принимает такие параметры : ширина, высота, символ рамки, символ заливки, цвет рамки,
