@@ -6,18 +6,27 @@
 #include <Windows.h>
 #include <conio.h>
 using namespace std;
-void SetCursor(int X, int Y, int C)
+
+HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+COORD position;
+void SetCursor(int X, int Y, int col)
 { 
-	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	SetConsoleTextAttribute(hConsole, C);
-	cout << "X = " << X << "\n";
-	cout << "Y = " << Y << "\n";
+	cout << "Enter colour - Black = 0, Blue = 1, Green = 2, Cyan = 3, Red = 4, Magenta = 5, \n\n Brown = 6, LightGray = 7, DarkGray = 8, ";
+	cout << " LightBlue = 9, LightGreen = 10,\n\n LightCyan = 11, LightRed = 12, LightMagenta = 13, Yellow = 14, White = 15\n";
+	cin >> col; 
+	SetConsoleTextAttribute(h, col);
+	cout << "Enter X - ";
+	cin >> position.X;
+	cout << "Enter Y - "; 
+	cin >> position.Y;
+	system ("cls");
+	SetConsoleCursorPosition(h, position);
+	cout << "Glory to Ukraine\n";
 }
 int main()
 {
-	SetCursor(5, 8, 5);
+	SetCursor(0,0,0);
 }
-
 
 //2.	Написать функцию Line, которую можно будет вызвать так :
 //Line(20, '@', 12, true);
