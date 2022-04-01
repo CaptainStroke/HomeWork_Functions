@@ -2,56 +2,73 @@
 //Функция принимает три аргумента : координата по X, координата по Y, номер цвета.
 
 
-#include <iostream>
-#include <Windows.h>
-#include <conio.h>
-using namespace std;
-
-HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
-COORD position;
-void SetCursor(int X, int Y, int col)
-{ 
-	cout << "Enter colour - Black = 0, Blue = 1, Green = 2, Cyan = 3, Red = 4, Magenta = 5, \n\n Brown = 6, LightGray = 7, DarkGray = 8, ";
-	cout << " LightBlue = 9, LightGreen = 10,\n\n LightCyan = 11, LightRed = 12, LightMagenta = 13, Yellow = 14, White = 15\n";
-	cin >> col; 
-	SetConsoleTextAttribute(h, col);
-	cout << "Enter X - ";
-	cin >> position.X;
-	cout << "Enter Y - "; 
-	cin >> position.Y;
-	system ("cls");
-	SetConsoleCursorPosition(h, position);
-	cout << "Glory to Ukraine\n";
-}
-int main()
-{
-	SetCursor(0,0,0);
-}
+//#include <iostream>
+//#include <Windows.h>
+//#include <conio.h>
+//using namespace std;
+//
+//HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+//COORD position;
+//void SetCursor(int X, int Y, int col)
+//{ 
+//	cout << "Enter colour - Black = 0, Blue = 1, Green = 2, Cyan = 3, Red = 4, Magenta = 5, \n\n Brown = 6, LightGray = 7, DarkGray = 8, ";
+//	cout << " LightBlue = 9, LightGreen = 10,\n\n LightCyan = 11, LightRed = 12, LightMagenta = 13, Yellow = 14, White = 15\n";
+//	cin >> col; 
+//	SetConsoleTextAttribute(h, col);
+//	cout << "Enter X - ";
+//	cin >> position.X;
+//	cout << "Enter Y - "; 
+//	cin >> position.Y;
+//	system ("cls");
+//	SetConsoleCursorPosition(h, position);
+//	cout << "Glory to Ukraine\n";
+//}
+//int main()
+//{
+//	SetCursor(0,0,0);
+//}
 
 //2.	Написать функцию Line, которую можно будет вызвать так :
 //Line(20, '@', 12, true);
 //и при этом горизонтальная нарисуется линия, состоящая из 20 «собачек» красного цвета.
 //Если передать в последнем параметре false – линия станет вертикальной.
 
-//
-//#include <iostream>
-//#include <Windows.h>
-//using namespace std;
-//
-////void func(int a, string b, int c);
-////int main();
-//
-//void func(int a, string b, int c)
-//{
-//	cout << a << b << c << "\n";
-//}
-//
-//int main()
-//{
-//	func(5, "@", 8);
-//	cout << "Hello";
-//}
+#include <iostream>
+#include <windows.h>
+using namespace std;
 
+HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+void Line(int num, char sym, int col, bool dir=0)
+{
+	for (int i = 0; i < num; i++)
+	{
+		SetConsoleTextAttribute(h, col);
+		cout << sym;	
+		(dir == 1) ? cout << " " : cout << "\n";
+	}
+	cout << "Enter number of symbols - \n";
+	cin >> num;
+	cout << "Enter the type of symbol - \n";
+	cin >> sym;
+	cout << "Choose your color - \n";
+	cout << " Black = 0, Blue = 1, Green = 2, Cyan = 3, Red = 4, Magenta = 5,\n\n Brown = 6, LightGray = 7, DarkGray = 8,";
+	cout << " LightBlue = 9, LightGreen = 10,\n\n LightCyan = 11, LightRed = 12, LightMagenta = 13, Yellow = 14, White = 15\n";
+	cin >> col;
+	cout << "Choose direction - \n";
+	cout << "Horizontal - 1 true\nVertical - 0 false\n\n";
+	cin >> dir;
+	system("cls");
+	for (int i = 0; i < num; i++)
+	{
+		SetConsoleTextAttribute(h, col);
+		cout << sym;
+		(dir == 1) ? cout << " " : cout << "\n";
+	}
+}
+int main()
+{
+	Line(20, '@', 12, true);
+}
 
 
 //3.	Написать функцию Rectangle, которая выводит на экран прямоугольник.
