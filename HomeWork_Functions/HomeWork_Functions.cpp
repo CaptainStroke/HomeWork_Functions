@@ -33,42 +33,42 @@
 //и при этом горизонтальная нарисуется линия, состоящая из 20 «собачек» красного цвета.
 //Если передать в последнем параметре false – линия станет вертикальной.
 
-#include <iostream>
-#include <windows.h>
-using namespace std;
-
-HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
-void Line(int num, char sym, int col, bool dir=0)
-{
-	for (int i = 0; i < num; i++)
-	{
-		SetConsoleTextAttribute(h, col);
-		cout << sym;	
-		(dir == 1) ? cout << " " : cout << "\n";
-	}
-	cout << "Enter number of symbols - \n";
-	cin >> num;
-	cout << "Enter the type of symbol - \n";
-	cin >> sym;
-	cout << "Choose your color - \n";
-	cout << " Black = 0, Blue = 1, Green = 2, Cyan = 3, Red = 4, Magenta = 5,\n\n Brown = 6, LightGray = 7, DarkGray = 8,";
-	cout << " LightBlue = 9, LightGreen = 10,\n\n LightCyan = 11, LightRed = 12, LightMagenta = 13, Yellow = 14, White = 15\n";
-	cin >> col;
-	cout << "Choose direction - \n";
-	cout << "Horizontal - 1 true\nVertical - 0 false\n\n";
-	cin >> dir;
-	system("cls");
-	for (int i = 0; i < num; i++)
-	{
-		SetConsoleTextAttribute(h, col);
-		cout << sym;
-		(dir == 1) ? cout << " " : cout << "\n";
-	}
-}
-int main()
-{
-	Line(20, '@', 12, true);
-}
+//#include <iostream>
+//#include <windows.h>
+//using namespace std;
+//
+//HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+//void Line(int num, char sym, int col, bool dir=0)
+//{
+//	for (int i = 0; i < num; i++)
+//	{
+//		SetConsoleTextAttribute(h, col);
+//		cout << sym;	
+//		(dir == 1) ? cout << " " : cout << "\n";
+//	}
+//	cout << "Enter number of symbols - \n";
+//	cin >> num;
+//	cout << "Enter the type of symbol - \n";
+//	cin >> sym;
+//	cout << "Choose your color - \n";
+//	cout << " Black = 0, Blue = 1, Green = 2, Cyan = 3, Red = 4, Magenta = 5,\n\n Brown = 6, LightGray = 7, DarkGray = 8,";
+//	cout << " LightBlue = 9, LightGreen = 10,\n\n LightCyan = 11, LightRed = 12, LightMagenta = 13, Yellow = 14, White = 15\n";
+//	cin >> col;
+//	cout << "Choose direction - \n";
+//	cout << "Horizontal - 1 true\nVertical - 0 false\n\n";
+//	cin >> dir;
+//	system("cls");
+//	for (int i = 0; i < num; i++)
+//	{
+//		SetConsoleTextAttribute(h, col);
+//		cout << sym;
+//		(dir == 1) ? cout << " " : cout << "\n";
+//	}
+//}
+//int main()
+//{
+//	Line(20, '@', 12, true);
+//}
 
 
 //3.	Написать функцию Rectangle, которая выводит на экран прямоугольник.
@@ -76,7 +76,92 @@ int main()
 //цвет заливки, координаты верхнего левого угла по X и Y.
 //У функции должны быть параметры по умолчанию.
 
+//#include <iostream>
+//#include <windows.h>
+//using namespace std;
+//
+//HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+//COORD position;
+//
+//void Rectangle(int width, int height, char sym, char back, int col, int back_col, int X, int Y)
+//{
+//	//position.X = X;
+//	//position.Y = Y;
+//	for (int y = 0; y < height; y++)
+//	{
+//		for (int x = X; x < width; x++)
+//		{
+//			if (y == 0 || x == 0 || x == width - 1 || y == height - 1) // рамки
+//			{
+//				SetConsoleTextAttribute(h, col);
+//				cout << sym;
+//			}
+//			else
+//			{
+//				SetConsoleTextAttribute(h, back_col);
+//				cout << back;
+//			}
+//		}
+//		cout << "\n";
+//		position.X ;
+//		position.Y++;
+//		SetConsoleCursorPosition(h, position);
+//	}
+//	position.X = X;
+//	position.Y = ++width;
+//	SetConsoleCursorPosition(h, position);
+//	cout << "Recktangle - \n";
+//	cout << "Enter width - \n";
+//	cin >> width;
+//	cout << "Enter width - \n";
+//	cin >> height;
+//	cout << "Enter symbol - \n";
+//	cin >> sym;
+//	cout << "Enter backgroud symbol - :\n";
+//	cin >> back;
+//	cout << "Enter color for frame\n";
+//	cin >> col;
+//	cout << "Enter background color\n";
+//	cin >> back_col;
+//	cout << " Coordinate X - \n";
+//	cin >> X;
+//	cout << "Coordinate Y - \n";
+//	cin >> Y;
+//	system("cls");
+//	for (int y = 0; y < height; y++)
+//	{
+//		for (int x = 0; x < width; x++)
+//		{
+//			if (y == 0 || x == 0 || x == width - 1 || y == height - 1) // рамки
+//			{
+//				SetConsoleTextAttribute(h, col);
+//				cout << sym;
+//			}
+//			else
+//			{
+//				SetConsoleTextAttribute(h, back_col);
+//				cout << back;
+//			}
+//		}
+//		cout << "\n";
+//		position.X;
+//		position.Y++;
+//		SetConsoleCursorPosition(h, position);
+//	}
+//	position.X = height;
+//	position.Y = ++width;
+//	SetConsoleCursorPosition(h, position);
+//	
+//}
+//int main()
+//{
+//	Rectangle(4, 5, '@', '#', 2, 3, 5, 0);
+//}
+
+
 //4.	Написать функцию, которая возвращает куб переданного числа.
+
+
 
 //5.	Написать функцию, которая проверяет, является ли переданное ей число простым.
 //Число называется простым, если оно делится без остатка только на себя и на единицу.
