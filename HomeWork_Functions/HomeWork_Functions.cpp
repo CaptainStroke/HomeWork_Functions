@@ -75,7 +75,7 @@
 //Функция принимает такие параметры : ширина, высота, символ рамки, символ заливки, цвет рамки,
 //цвет заливки, координаты верхнего левого угла по X и Y.
 //У функции должны быть параметры по умолчанию.
-
+//
 //#include <iostream>
 //#include <windows.h>
 //using namespace std;
@@ -161,27 +161,84 @@
 
 //4.	Написать функцию, которая возвращает куб переданного числа.
 
-#include <iostream>
-using namespace std;
-
-int Cube(int number=1)
-{
-	int x = 1;
-	cout << "Cube of number\n";
-	cin >> number;
-	for (int i = 0; i < 3; i++) x *= number;
-	cout << x;
-	return x;
-}
-int main()
-{
-	Cube(1);
-	
-}
+//#include <iostream>
+//using namespace std;
+//
+//int Cube(int number=1)
+//{
+//	int x = 1;
+//	cout << "Cube of number\n";
+//	cin >> number;
+//	for (int i = 0; i < 3; i++) x *= number;
+//	cout << x;
+//	return x;
+//}
+//int main()
+//{
+//	Cube(1);
+//	
+//}
 
 //5.	Написать функцию, которая проверяет, является ли переданное ей число простым.
 //Число называется простым, если оно делится без остатка только на себя и на единицу.
 
+#include <iostream>
+using namespace std;
+
+ int prime(int s)// непонятно почему с простыми числами недокручено
+{
+	int n = 2;
+	if (s % n == 0)
+	{
+		while (n < s)
+		{
+			n++;
+		}
+		cout << s << " - Just number\n";
+	}
+	else if (n > 1 && s % n != 0)
+	{
+		while (n < s)
+		{
+			n++;
+		}
+		cout << s << " - Prime Number\n";
+	}	return s;
+}
+
+int main()
+{
+	prime(15);
+}
+
+//using namespace std;
+//
+//void Simple(int n)
+//{
+//	int y = 2;
+//	if (n > 1 && n % y != 0)
+//	{
+//		while (y < n)
+//		{
+//			y++;
+//		}
+//		cout << " число простое!\n ";
+//	}
+//	else
+//	{
+//		cout << " число  составное!\n ";
+//	}
+//}
+//int main()
+//{
+//	setlocale(0, "rus");
+//	cout << " Является ли число простым? \n";
+//	int number;
+//	cout << " Введите число:\n";
+//	cin >> number;
+//	cout << " Ответ:";
+//	Simple(number);
+//}
 //6.	Написать функцию, которая получает в качестве параметров 2 целых числа и возвращает сумму
 //чисел из диапазона между ними.
 
