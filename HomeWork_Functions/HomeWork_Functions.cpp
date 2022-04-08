@@ -182,36 +182,57 @@
 //5.	Написать функцию, которая проверяет, является ли переданное ей число простым.
 //Число называется простым, если оно делится без остатка только на себя и на единицу.
 
+//#include <iostream>
+//using namespace std;
+//
+// int prime(int s)// непонятно почему с простыми числами недокручено
+//{
+//	int n = 2;
+//	if (s % n == 0)
+//	{
+//		while (n < s)
+//		{
+//			n++;
+//		}
+//		cout << s << " - Just number\n";
+//	}
+//	else if (n > 1 && s % n != 0)
+//	{
+//		while (n < s)
+//		{
+//			n++;
+//		}
+//		cout << s << " - Prime Number\n";
+//	}	return s;
+//}
+//
+//int main()
+//{
+//	prime(15);
+//}
+
 #include <iostream>
 using namespace std;
 
- int prime(int s)// непонятно почему с простыми числами недокручено
+int ShowSumBetweenTwoNumbers(int a = 0, int b = 5)
 {
-	int n = 2;
-	if (s % n == 0)
+	int sum = 0;
+	for (int i = a + 1; i < b; i++)
 	{
-		while (n < s)
-		{
-			n++;
-		}
-		cout << s << " - Just number\n";
+		sum += i;
+		cout << "Add Steps - " << sum << "\n";
 	}
-	else if (n > 1 && s % n != 0)
-	{
-		while (n < s)
-		{
-			n++;
-		}
-		cout << s << " - Prime Number\n";
-	}	return s;
+	return sum;
 }
-
 int main()
 {
-	prime(15);
+	ShowSumBetweenTwoNumbers(5, 10);
 }
+
 //6.	Написать функцию, которая получает в качестве параметров 2 целых числа и возвращает сумму
 //чисел из диапазона между ними.
+
+
 
 //7.	Написать функцию, которая принимает две даты(т.е.функция принимает шесть параметров)
 //и вычисляет разность в днях между этими датами. Для решения этой задачи необходимо также написать
